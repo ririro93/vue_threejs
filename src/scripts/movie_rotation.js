@@ -18,87 +18,27 @@ function main() {
   const movieData = {
     Action: {
       idx: 0,
-      urls: [
-        'https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_d26e81c0-1b87-4076-9da4-9fcdc0389ea5_1200x.jpg?v=1607475298',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089',
-        'https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500',
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547_screen.jpg?ts=1576732289',
-        'http://cdn.shopify.com/s/files/1/0290/5663/0868/products/businessasusual999x666-min_1200x.jpg?v=1584637332',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHR1sxMneOFCatwgpVQqkeC2g_XRDRWgsVm_BpVHxbv10TBA4&s',
-        'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/950e439404c3d5eddd86ae876cec83bf_949b5045-2503-4883-bcd2-ff1f31f5b14c_240x360_crop_center.progressive.jpg?v=1573588746',
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg',
-        'https://m.media-amazon.com/images/I/71pAQsmvQyL._AC_SY879_.jpg',
-      ]
+      urls: ['https://image.tmdb.org/t/p/w500//rEm96ib0sPiZBADNKBHKBv5bve9.jpg', 'https://image.tmdb.org/t/p/w500//nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg', 'https://image.tmdb.org/t/p/w500//pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg', 'https://image.tmdb.org/t/p/w500//oBgWY00bEFeZ9N25wWVyuQddbAo.jpg', 'https://image.tmdb.org/t/p/w500//tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg', 'https://image.tmdb.org/t/p/w500//h8Rb9gBr48ODIwYUttZNYeMWeUU.jpg', 'https://image.tmdb.org/t/p/w500//AoWY1gkcNzabh229Icboa1Ff0BM.jpg', 'https://image.tmdb.org/t/p/w500//lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg', 'https://image.tmdb.org/t/p/w500//3mKMWP5OokB7QpcOMA1yl8BXFAF.jpg', 'https://image.tmdb.org/t/p/w500//keEnkeAvifw8NSEC4f6WsqeLJgF.jpg', 'https://image.tmdb.org/t/p/w500//6vcDalR50RWa309vBH1NLmG2rjQ.jpg', 'https://image.tmdb.org/t/p/w500//9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg', 'https://image.tmdb.org/t/p/w500//1UCOF11QCw8kcqvce8LKOO6pimh.jpg', 'https://image.tmdb.org/t/p/w500//8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg', 'https://image.tmdb.org/t/p/w500//xCEg6KowNISWvMh8GvPSxtdf9TO.jpg', 'https://image.tmdb.org/t/p/w500//zoeKREZ2IdAUnXISYCS0E6H5BVh.jpg', 'https://image.tmdb.org/t/p/w500//6XYLiMxHAaCsoyrVo38LBWMw2p8.jpg', 'https://image.tmdb.org/t/p/w500//AmUGn1rJ9XDDP6DYn9OA2uV8MIg.jpg', 'https://image.tmdb.org/t/p/w500//dWSnsAGTfc8U27bWsy2RfwZs0Bs.jpg', 'https://image.tmdb.org/t/p/w500//6goDkAD6J3br81YMQf0Gat8Bqjy.jpg']
     },
     Romance: {
       idx: 1,
-      urls: [
-        'https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_d26e81c0-1b87-4076-9da4-9fcdc0389ea5_1200x.jpg?v=1607475298',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089',
-        'https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500',
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547_screen.jpg?ts=1576732289',
-        'http://cdn.shopify.com/s/files/1/0290/5663/0868/products/businessasusual999x666-min_1200x.jpg?v=1584637332',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHR1sxMneOFCatwgpVQqkeC2g_XRDRWgsVm_BpVHxbv10TBA4&s',
-        'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/950e439404c3d5eddd86ae876cec83bf_949b5045-2503-4883-bcd2-ff1f31f5b14c_240x360_crop_center.progressive.jpg?v=1573588746',
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg',
-        'https://m.media-amazon.com/images/I/71pAQsmvQyL._AC_SY879_.jpg',
-      ]
+      urls: ['https://image.tmdb.org/t/p/w500//3btDwus5VN5jOWfA9strpDJWwfj.jpg', 'https://image.tmdb.org/t/p/w500//kiX7UYfOpYrMFSAGbI6j1pFkLzQ.jpg', 'https://image.tmdb.org/t/p/w500//bAQ8O5Uw6FedtlCbJTutenzPVKd.jpg', 'https://image.tmdb.org/t/p/w500//gn2vCmWO7jQBBto9SYuBHYZARaU.jpg', 'https://image.tmdb.org/t/p/w500//c7JzcVK4OZY1u7HYiFBOASkKPP5.jpg', 'https://image.tmdb.org/t/p/w500//xKCtoYHUyX8zAg68eemnYa2orep.jpg', 'https://image.tmdb.org/t/p/w500//umy454n46930E9ak437kxT7kcXU.jpg', 'https://image.tmdb.org/t/p/w500//u3B2YKUjWABcxXZ6Nm9h10hLUbh.jpg', 'https://image.tmdb.org/t/p/w500//7Ai8vNEv4zEveh12JViGikoVPVV.jpg', 'https://image.tmdb.org/t/p/w500//MBiKqTsouYqAACLYNDadsjhhC0.jpg', 'https://image.tmdb.org/t/p/w500//m48l3LFjwJ1UQqUdX37t09B38vy.jpg', 'https://image.tmdb.org/t/p/w500//7EuZIYEHLTu1G69maFLwg13u5iB.jpg', 'https://image.tmdb.org/t/p/w500//qgrk7r1fV4IjuoeiGS5HOhXNdLJ.jpg', 'https://image.tmdb.org/t/p/w500//63kGofUkt1Mx0SIL4XI4Z5AoSgt.jpg', 'https://image.tmdb.org/t/p/w500//9ZedQHPQVveaIYmDSTazhT3y273.jpg', 'https://image.tmdb.org/t/p/w500//j9O2WXJqF45ynkng4SAsZ1h0OCt.jpg', 'https://image.tmdb.org/t/p/w500//q719jXXEzOoYaps6babgKnONONX.jpg', 'https://image.tmdb.org/t/p/w500//hPBJckYsL1UOsz44InZ2wYJyJTy.jpg', 'https://image.tmdb.org/t/p/w500//tuFaWiqX0TXoWu7DGNcmX3UW7sT.jpg', 'https://image.tmdb.org/t/p/w500//vg9C5LttsKBqoLuqeQvOXaeBGiD.jpg']
     },
     Comedy: {
       idx: 2,
-      urls: [
-        'https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_d26e81c0-1b87-4076-9da4-9fcdc0389ea5_1200x.jpg?v=1607475298',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089',
-        'https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500',
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547_screen.jpg?ts=1576732289',
-        'http://cdn.shopify.com/s/files/1/0290/5663/0868/products/businessasusual999x666-min_1200x.jpg?v=1584637332',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHR1sxMneOFCatwgpVQqkeC2g_XRDRWgsVm_BpVHxbv10TBA4&s',
-        'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/950e439404c3d5eddd86ae876cec83bf_949b5045-2503-4883-bcd2-ff1f31f5b14c_240x360_crop_center.progressive.jpg?v=1573588746',
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg',
-        'https://m.media-amazon.com/images/I/71pAQsmvQyL._AC_SY879_.jpg',
-      ]
+      urls: ['https://image.tmdb.org/t/p/w500//oBgWY00bEFeZ9N25wWVyuQddbAo.jpg', 'https://image.tmdb.org/t/p/w500//32vLDKSzcCMh55zqqaSqqUA8naz.jpg', 'https://image.tmdb.org/t/p/w500//dkokENeY5Ka30BFgWAqk14mbnGs.jpg', 'https://image.tmdb.org/t/p/w500//msI5a9TPnepx47JUb2vl88hb80R.jpg', 'https://image.tmdb.org/t/p/w500//3mKMWP5OokB7QpcOMA1yl8BXFAF.jpg', 'https://image.tmdb.org/t/p/w500//keEnkeAvifw8NSEC4f6WsqeLJgF.jpg', 'https://image.tmdb.org/t/p/w500//8XZI9QZ7Pm3fVkigWJPbrXCMzjq.jpg', 'https://image.tmdb.org/t/p/w500//3RE9DNBCvuso5OPZPg71ryntNjx.jpg', 'https://image.tmdb.org/t/p/w500//hm58Jw4Lw8OIeECIq5qyPYhAeRJ.jpg', 'https://image.tmdb.org/t/p/w500//tbVZ3Sq88dZaCANlUcewQuHQOaE.jpg', 'https://image.tmdb.org/t/p/w500//19kfvGktytDZInUmpv3WlaHoTxP.jpg', 'https://image.tmdb.org/t/p/w500//A1Gy5HX3DKGaNW1Ay30NTIVJqJ6.jpg', 'https://image.tmdb.org/t/p/w500//qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg', 'https://image.tmdb.org/t/p/w500//3btDwus5VN5jOWfA9strpDJWwfj.jpg', 'https://image.tmdb.org/t/p/w500//gd9PcIgzV3YWa0c7iCECG1TuXX5.jpg', 'https://image.tmdb.org/t/p/w500//b1C0FuXp4wiPmHLVKq4kwtDMgK6.jpg', 'https://image.tmdb.org/t/p/w500//pMyCYtgfBmMisX3RFc5eH6zIV5Y.jpg', 'https://image.tmdb.org/t/p/w500//jlJ8nDhMhCYJuzOw3f52CP1W8MW.jpg', 'https://image.tmdb.org/t/p/w500//2xnf2ZaGXudvgBKPtVXMkNeooh1.jpg', 'https://image.tmdb.org/t/p/w500//aSGwXbaTMxUhrfXT6xyZKqoklfB.jpg']
     },
     Horror: {
       idx: 3,
-      urls: [
-        'https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_d26e81c0-1b87-4076-9da4-9fcdc0389ea5_1200x.jpg?v=1607475298',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089',
-        'https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500',
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547_screen.jpg?ts=1576732289',
-        'http://cdn.shopify.com/s/files/1/0290/5663/0868/products/businessasusual999x666-min_1200x.jpg?v=1584637332',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHR1sxMneOFCatwgpVQqkeC2g_XRDRWgsVm_BpVHxbv10TBA4&s',
-        'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/950e439404c3d5eddd86ae876cec83bf_949b5045-2503-4883-bcd2-ff1f31f5b14c_240x360_crop_center.progressive.jpg?v=1573588746',
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg',
-        'https://m.media-amazon.com/images/I/71pAQsmvQyL._AC_SY879_.jpg',
-      ]
+      urls: ['https://image.tmdb.org/t/p/w500//b4gYVcl8pParX8AjkN90iQrWrWO.jpg', 'https://image.tmdb.org/t/p/w500//keEnkeAvifw8NSEC4f6WsqeLJgF.jpg', 'https://image.tmdb.org/t/p/w500//3RE9DNBCvuso5OPZPg71ryntNjx.jpg', 'https://image.tmdb.org/t/p/w500//95S6PinQIvVe4uJAd82a2iGZ0rA.jpg', 'https://image.tmdb.org/t/p/w500//xXI5Lg6mJLEesTggRJBrq50vrqU.jpg', 'https://image.tmdb.org/t/p/w500//iqO2sTFqm6XwEXmlLxKDX75RPjY.jpg', 'https://image.tmdb.org/t/p/w500//4U1SBHmwHkNA0eHZ2n1CuiC1K1g.jpg', 'https://image.tmdb.org/t/p/w500//hGPGRRz6FTIRed1zestdWrV2Iwd.jpg', 'https://image.tmdb.org/t/p/w500//xZ2KER2gOHbuHP2GJoODuXDSZCb.jpg', 'https://image.tmdb.org/t/p/w500//tmghT8HaddVIS9hEXIOI9GuDchi.jpg', 'https://image.tmdb.org/t/p/w500//b1C0FuXp4wiPmHLVKq4kwtDMgK6.jpg', 'https://image.tmdb.org/t/p/w500//xD9mc8JCVXA8T8u4Od7qOUBuGH4.jpg', 'https://image.tmdb.org/t/p/w500//9umVH1R5Z2I1Fqzg7qwMIR2gpKG.jpg', 'https://image.tmdb.org/t/p/w500//lcyKve7nXRFgRyms9M1bndNkKOx.jpg', 'https://image.tmdb.org/t/p/w500//wB8qqLIaYDkYEnjbS5hAJiTuYU6.jpg', 'https://image.tmdb.org/t/p/w500//kBKKXVbVwIP81u8Bnhguux48Sdn.jpg', 'https://image.tmdb.org/t/p/w500//7S9RvfMBWSTlUZ4VbxDY7oLeenk.jpg', 'https://image.tmdb.org/t/p/w500//wDmulF9Psmp00huLaLcqqjRHFdp.jpg', 'https://image.tmdb.org/t/p/w500//b2shaNA4F8zNIwoRYr33lPTiFfl.jpg', 'https://image.tmdb.org/t/p/w500//h7dZpJDORYs5c56dydbrLFkEXpE.jpg']
     },
     'Sci-fi': {
       idx: 4,
-      urls: [
-        'https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_d26e81c0-1b87-4076-9da4-9fcdc0389ea5_1200x.jpg?v=1607475298',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089',
-        'https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500',
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547_screen.jpg?ts=1576732289',
-        'http://cdn.shopify.com/s/files/1/0290/5663/0868/products/businessasusual999x666-min_1200x.jpg?v=1584637332',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHR1sxMneOFCatwgpVQqkeC2g_XRDRWgsVm_BpVHxbv10TBA4&s',
-        'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/950e439404c3d5eddd86ae876cec83bf_949b5045-2503-4883-bcd2-ff1f31f5b14c_240x360_crop_center.progressive.jpg?v=1573588746',
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg',
-        'https://m.media-amazon.com/images/I/71pAQsmvQyL._AC_SY879_.jpg',
-      ]
+      urls: ['https://image.tmdb.org/t/p/w500//pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg', 'https://image.tmdb.org/t/p/w500//tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg', 'https://image.tmdb.org/t/p/w500//9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg', 'https://image.tmdb.org/t/p/w500//u74DFoZGTcZ8cuHO8nvQkCqXEVP.jpg', 'https://image.tmdb.org/t/p/w500//e4REOC6CZW8J6FslA4nRvdQXFXR.jpg', 'https://image.tmdb.org/t/p/w500//6XYLiMxHAaCsoyrVo38LBWMw2p8.jpg', 'https://image.tmdb.org/t/p/w500//p9YDHJKvUoi7v2SCd3vLGPae1Xp.jpg', 'https://image.tmdb.org/t/p/w500//2W4ZvACURDyhiNnSIaFPHfNbny3.jpg', 'https://image.tmdb.org/t/p/w500//2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg', 'https://image.tmdb.org/t/p/w500//eLT8Cu357VOwBVTitkmlDEg32Fs.jpg', 'https://image.tmdb.org/t/p/w500//hGPGRRz6FTIRed1zestdWrV2Iwd.jpg', 'https://image.tmdb.org/t/p/w500//13B6onhL6FzSN2KaNeQeMML05pS.jpg', 'https://image.tmdb.org/t/p/w500//tmghT8HaddVIS9hEXIOI9GuDchi.jpg', 'https://image.tmdb.org/t/p/w500//7WsyChQLEftFiDOVTGkv3hFpyyt.jpg', 'https://image.tmdb.org/t/p/w500//jDwZavHo99JtGsCyRzp4epeeBHx.jpg', 'https://image.tmdb.org/t/p/w500//8WUVHemHFH2ZIP6NWkwlHWsyrEL.jpg', 'https://image.tmdb.org/t/p/w500//2xnf2ZaGXudvgBKPtVXMkNeooh1.jpg', 'https://image.tmdb.org/t/p/w500//k68nPLbIST6NP96JmTxmZijEvCA.jpg', 'https://image.tmdb.org/t/p/w500//or06FN3Dka5tukK1e9sl16pB3iy.jpg', 'https://image.tmdb.org/t/p/w500//4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg']
     },
     Mystery: {
       idx: 5,
-      urls: [
-        'https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_d26e81c0-1b87-4076-9da4-9fcdc0389ea5_1200x.jpg?v=1607475298',
-        'https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089',
-        'https://creativereview.imgix.net/content/uploads/2019/12/joker_full.jpg?auto=compress,format&q=60&w=1012&h=1500',
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547_screen.jpg?ts=1576732289',
-        'http://cdn.shopify.com/s/files/1/0290/5663/0868/products/businessasusual999x666-min_1200x.jpg?v=1584637332',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHR1sxMneOFCatwgpVQqkeC2g_XRDRWgsVm_BpVHxbv10TBA4&s',
-        'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/950e439404c3d5eddd86ae876cec83bf_949b5045-2503-4883-bcd2-ff1f31f5b14c_240x360_crop_center.progressive.jpg?v=1573588746',
-        'https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg',
-        'https://m.media-amazon.com/images/I/71pAQsmvQyL._AC_SY879_.jpg',
-      ]
+      urls: ['https://image.tmdb.org/t/p/w500//xCEg6KowNISWvMh8GvPSxtdf9TO.jpg', 'https://image.tmdb.org/t/p/w500//95S6PinQIvVe4uJAd82a2iGZ0rA.jpg', 'https://image.tmdb.org/t/p/w500//wcrjc1uwQaqoqtqi67Su4VCOYo0.jpg', 'https://image.tmdb.org/t/p/w500//iqO2sTFqm6XwEXmlLxKDX75RPjY.jpg', 'https://image.tmdb.org/t/p/w500//tmghT8HaddVIS9hEXIOI9GuDchi.jpg', 'https://image.tmdb.org/t/p/w500//lcyKve7nXRFgRyms9M1bndNkKOx.jpg', 'https://image.tmdb.org/t/p/w500//8jDvtdH327I8TgX3UPdkAsZF1dA.jpg', 'https://image.tmdb.org/t/p/w500//sCoG0ibohbPrnyomtzegSuBL40L.jpg', 'https://image.tmdb.org/t/p/w500//m6bUeV4mczG3z2YXXr5XDKPsQzv.jpg', 'https://image.tmdb.org/t/p/w500//h7dZpJDORYs5c56dydbrLFkEXpE.jpg', 'https://image.tmdb.org/t/p/w500//7EGElXVSNnqcPjuhXPd6UVUX1rD.jpg', 'https://image.tmdb.org/t/p/w500//zEqyD0SBt6HL7W9JQoWwtd5Do1T.jpg', 'https://image.tmdb.org/t/p/w500//ode14q7WtDugFDp78fo9lCsmay9.jpg', 'https://image.tmdb.org/t/p/w500//kxc25B05Gq4CbCoWbyTFf9iF0wn.jpg', 'https://image.tmdb.org/t/p/w500//8F9xUvb1JMWUMkFV2Yq3aiueAbq.jpg', 'https://image.tmdb.org/t/p/w500//suORidtGKPO6tWwNqiwGvNo85z3.jpg', 'https://image.tmdb.org/t/p/w500//s836PRwHkLjrOJrfW0eo7B4NJOf.jpg', 'https://image.tmdb.org/t/p/w500//4WT7zYFpe0fsbg6TitppiHddWAh.jpg', 'https://image.tmdb.org/t/p/w500//2LwamrHAmxqEHsT9JViFJxT08Ek.jpg', 'https://image.tmdb.org/t/p/w500//5aL71e0XBgHZ6zdWcWeuEhwD2Gw.jpg']
     },
   }
 
@@ -237,6 +177,9 @@ function main() {
   function onScrollEvent (direction) {
     // on scrolling down
     if (direction === 'down') {
+      if (cameraScrollIdx === 5) {
+        return
+      }
       cameraScrollIdx += 1
       gsap.to(camera.position, {
         duration:1,
@@ -249,18 +192,19 @@ function main() {
       })
       // on scrolling up
     } else if (direction === 'up') {
-      if (cameraScrollIdx >= 1) {
-        cameraScrollIdx -= 1
-        gsap.to(camera.position, {
-          duration:1,
-          x: cameraStartingPos.x,
-          y: -cameraScrollIdx * cameraScrollDist,
-          z: cameraStartingPos.z,
-          onUpdate:function(){
-            camera.updateProjectionMatrix();
-          }
-        })
+      if (cameraScrollIdx === 0) {
+        return
       }
+      cameraScrollIdx -= 1
+      gsap.to(camera.position, {
+        duration:1,
+        x: cameraStartingPos.x,
+        y: -cameraScrollIdx * cameraScrollDist,
+        z: cameraStartingPos.z,
+        onUpdate:function(){
+          camera.updateProjectionMatrix();
+        }
+      })
     } else {
       for (let genre in movieData) {
         if (genre === direction) {
