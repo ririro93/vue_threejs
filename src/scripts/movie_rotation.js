@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import gsap from 'gsap'
+import { data } from 'jquery'
 
 // data to be received from vue
 const vueData = []
@@ -53,12 +54,13 @@ function main() {
   const fov = 80    // field of view in degrees
   const aspect = window.innerWidth / window.innerHeight
   const near = 0.1
-  const far = 10000
+  const far = 100
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
-  const cameraStartingPos = {x: 0, y:0, z: 30}
+  const cameraStartingPos = {x: 0, y:0, z: 10}
   const cameraTargetStartDist = 50
   const cameraTargetStart = {x: 0, y: 0, z: cameraTargetStartDist}
-  const cameraScrollDist = 60
+  const cameraScrollDist = 100
+  const cameraZoominValue = 0.92
   let cameraTarget = {...cameraTargetStart}
   let cameraScrollIdx = 0
   camera.position.set(cameraStartingPos.x, cameraStartingPos.y, cameraStartingPos.z)
@@ -74,10 +76,13 @@ function main() {
   //// Objects
   // Movies
   const geometry = new THREE.BoxGeometry(10, 15, 10);
-	const radius = 80
+	const radius = 60
   const movieRotationSpeed = 0.0025
+  const moviesLootAtZ = 20
+  const movieEnlargeScale = {value: 1, goal: 0.3}
   let movieRotation = true
   let moviesFaceCam = true
+  let pickedMovieFaceCam = false
   let formerMovieRotation
   
   const movies = []
@@ -153,6 +158,9 @@ function main() {
 
   function onCanvasMouseMove( event ) {
     if (!is_clicked) {
+      const tempX = (event.clientX/window.innerWidth - 0.5) * 2
+      const tempY = (event.clientY/window.innerHeight - 0.5) * 2
+      rotateScreenOnMouse(tempX, tempY)
       return
     }
     event.preventDefault();
@@ -161,6 +169,12 @@ function main() {
     mouseVector.x = event.clientX
 		mouseVector.y = event.clientY
     rotateMovie(deltaX, deltaY)
+  }
+  function rotateScreenOnMouse(tempX, tempY) {
+    // console.log(tempX, tempY)
+    // camera.rotation.y = tempX * 0.001
+    // camera.rotation.x = tempY * 0.001
+    // camera.updateProjectionMatrix()
   }
   
   function onCanvasScroll (e) {
@@ -222,7 +236,6 @@ function main() {
       }
     }
   }
-
   main.onScrollEvent = onScrollEvent
 
   // rotate movie to show other sides
@@ -256,13 +269,14 @@ function main() {
           moviesFaceCam = false
 				}, 1000)
 
+        // picked Movie Faces Cam
+        pickedMovieFaceCam = true
+
         // stop movie rotation
         movieRotation = false
 				
 				document.body.classList.add('is-pointed')
-        setTimeout(() => {
-          picked_id = intersects[0].object.id
-        }, 1000)
+        picked_id = intersects[0].object.id
 				
 				// Change object position
 				const targetObj = intersects[0].object
@@ -282,13 +296,26 @@ function main() {
 				})
 				gsap.to(camera.position, {
 					duration:1,
-					x: Math.cos(targetObj.rad) * radius * 0.8, 
+					x: Math.cos(targetObj.rad) * radius * cameraZoominValue, 
 					y: targetObj.position.y, 
-					z: Math.sin(targetObj.rad) * radius * 0.8,
+					z: Math.sin(targetObj.rad) * radius * cameraZoominValue,
 					onUpdate:function(){
 						camera.updateProjectionMatrix();
 					}
 				})
+        // make movie smaller to prevent overlap
+        movies.forEach((movie) => {
+          if (movie.id === picked_id) {
+            gsap.to(movieEnlargeScale, {
+              duration: 1,
+              value: movieEnlargeScale.goal,
+              onUpdate: function () {
+                console.log(movieEnlargeScale.value)
+                movie.scale.set(movieEnlargeScale.value, movieEnlargeScale.value, movieEnlargeScale.value)
+              }
+            })
+          }
+        })
 			}
 		}
 	}
@@ -298,6 +325,9 @@ function main() {
       
       // movies face camera again
       moviesFaceCam = true
+
+      // picked Movie Faces Cam
+      pickedMovieFaceCam = false
       
       setTimeout(() => {
         // resume movie ratation
@@ -335,16 +365,19 @@ function main() {
         if (movie.id === picked_id) {
           gsap.to(tempMovieRotation, {
             duration: 1,
-            x: formerMovieRotation.x,
             y: formerMovieRotation.y,
-            z: formerMovieRotation.z,
             onUpdate: function () {
-              movie.rotation.x = tempMovieRotation.x
               movie.rotation.y = tempMovieRotation.y
-              movie.rotation.z = tempMovieRotation.z
             }
           })
-
+          gsap.to(movieEnlargeScale, {
+            duration: 1,
+            value: 1,
+            onUpdate: function () {
+              console.log(movieEnlargeScale.value)
+              movie.scale.set(movieEnlargeScale.value, movieEnlargeScale.value, movieEnlargeScale.value)
+            }
+          })
         }
       })
 			document.querySelector('.close').style.display = 'none'
@@ -384,8 +417,10 @@ function main() {
         movie.z = newZ
         movie.position.set(movie.x, movie.position.y, movie.z)
       }
-      // if (moviesFaceCam && movie.id !== picked_id && cameraScrollIdx === 0) {
       if (moviesFaceCam && movie.id !== picked_id) {
+        movie.lookAt(camera.position.x, camera.position.y, moviesLootAtZ)
+      }
+      if (pickedMovieFaceCam && moviesFaceCam && movie.id === picked_id) {
         movie.lookAt(camera.position)
       }
     })

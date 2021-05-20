@@ -38,7 +38,10 @@ export default {
 }
 </script>
 
-<style >
+<style>
+body {
+  background: rgb(37, 37, 37);
+}
 button {
   position: relative;
   z-index: 3;
@@ -54,7 +57,7 @@ button {
 }
 
 .close {
-    background: #f00;
+    background: rgb(218, 218, 218);
     position: fixed;
     z-index: 100;
     left: 50%;
@@ -65,7 +68,7 @@ button {
     width: 60px;
     height: 60px;
     text-align: center;
-    color: #fff;
+    color: rgb(31, 31, 31);
     text-decoration: none;
     line-height: 50px;
     display: none;
